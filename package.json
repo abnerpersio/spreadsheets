@@ -1,0 +1,31 @@
+{
+  "name": "spreadsheets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:abnerpersio/spreadsheets.git",
+  "author": "Abner Persio <binhopersio@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node dist/index.mjs",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "format": "prettier --write **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "build": "rimraf dist && npx esbuild src/index.ts --format=esm --bundle --platform=node --external:./node_modules/* --outfile=dist/index.mjs"
+  },
+  "dependencies": {
+    "fastify": "^3.28.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@types/node": "^17.0.24",
+    "@typescript-eslint/eslint-plugin": "^5.19.0",
+    "@typescript-eslint/parser": "^5.19.0",
+    "esbuild": "^0.14.36",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.6.2",
+    "ts-node-dev": "^1.1.8"
+  }
+}
