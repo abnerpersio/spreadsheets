@@ -1,11 +1,11 @@
-import Fastify from 'fastify';
+import express from 'express';
 
 import { routes } from './routes';
 
-const server = Fastify();
+const server = express();
 
-routes(server);
+server.use(routes);
 
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT).then(() => console.log(`server is running at port ${PORT}`));
+server.listen(PORT, () => console.log(`server is running at port ${PORT}`));
